@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +69,33 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+=======
+# 💳 FinBank – Modern Fintech Landing Page
+
+FinBank is a sleek, responsive fintech landing page built with **React** and **Tailwind CSS**.  
+It’s designed with a minimalist black & white UI/UX that communicates **trust, security, and innovation**.
+
+---
+
+## 🚀 Features
+
+- 🖤 **Minimalist black & white design** for a premium fintech look  
+- 📊 Interactive **Spending Overview chart**  
+- 📱 Fully **responsive** across devices  
+- 🔒 Emphasis on **security & trust**  
+- ⚡ Built with **React + Tailwind CSS** for speed & scalability
+
+---
+
+## 🛠 Tech Stack
+
+- **React** – Component-based UI library  
+- **Tailwind CSS** – Utility-first CSS framework  
+- **Lucide Icons** – Modern, customizable SVG icons  
+- **Recharts** – Data visualization library for the spending chart  
+
+---
+
+## 📂 Project Structure
+
+>>>>>>> 03ec78c4d599e947c07085c8890e47c0136f1d80
