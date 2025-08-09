@@ -10,6 +10,8 @@ import {
 } from "lucide-react";
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
 import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { motion } from "framer-motion";
+
 
 function Tag({ text }) {
   return (
@@ -18,6 +20,11 @@ function Tag({ text }) {
     </span>
   );
 }
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+};
 
 const spendingData = [
   { month: "Jan", spending: 400 },
@@ -50,7 +57,12 @@ export default function App() {
   return (
     <div className="bg-white text-black font-sans">
       {/* Navbar */}
-      <nav className="flex items-center justify-between px-8 py-4 border-b border-gray-200 sticky top-0 bg-white z-50">
+       <motion.nav
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        className="max-w-6xl mx-auto flex justify-between items-center py-6 px-6"
+      >
         <div className="flex items-center space-x-2">
           <div className="w-6 h-6 rounded-full bg-black"></div>
           <span className="font-bold text-lg">Finbank</span>
@@ -69,10 +81,16 @@ export default function App() {
         <button className="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800">
           Sign Up
         </button>
-      </nav>
+     </motion.nav>
 
       {/* Hero */}
-      <section className="text-center py-16 px-4">
+        <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false }}
+        variants={fadeInUp}
+        className="text-center py-20 px-6"
+      >
         <div className="mb-6 flex justify-center gap-4 flex-wrap">
           <Tag text="Track Spending" />
           <Tag text="FinTech Solution" />
@@ -123,10 +141,17 @@ export default function App() {
             </div>
           </div>
         </div>
-      </section>
+       </motion.section>
 
       {/* Services */}
-      <section id="services" className="py-16 px-8 bg-gray-50">
+      <motion.section
+        id="overview"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false }}
+        variants={fadeInUp}
+        className="max-w-4xl mx-auto px-6 py-16 text-center"
+      >
         <h2 className="text-2xl font-bold mb-8 text-center">Our Services</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           <ServiceCard
@@ -166,7 +191,7 @@ export default function App() {
             <p className="text-gray-500 mt-1">Available Balance</p>
           </div>
         </div>
-      </section>
+       </motion.section>
 
       {/* CTA */}
       <section className="text-center py-16 px-4">
@@ -181,8 +206,13 @@ export default function App() {
         </button>
       </section>
 
- <footer className="bg-black text-white mt-16">
-  {/* Top footer content */}
+ <motion.footer
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false }}
+        variants={fadeInUp}
+        className="bg-black text-white mt-16"
+      >
   <div className="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 gap-12">
     
     {/* Column 1 - Brand + Social */}
@@ -235,7 +265,7 @@ export default function App() {
   <div className="border-t border-gray-800 text-center py-4 text-gray-500 text-sm">
     © {new Date().getFullYear()} Stellar Finance. All rights reserved.
   </div>
-</footer>
+</motion.footer>
   </div>
   );
 }
